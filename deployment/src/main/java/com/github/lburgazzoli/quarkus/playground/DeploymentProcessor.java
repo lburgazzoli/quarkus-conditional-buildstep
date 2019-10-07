@@ -28,6 +28,11 @@ public class DeploymentProcessor {
         return new MyBuildItem("default");
     }
 
+    @BuildStep
+    MyBuildItem apecializedBuildItem() {
+        return new MyBuildItem("specialized");
+    }
+
     @Record(ExecutionTime.STATIC_INIT)
     @BuildStep
     void process(MyRecorder recorder, MyBuildItem item) {
